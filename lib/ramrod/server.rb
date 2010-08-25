@@ -32,6 +32,15 @@ class Ramrod
       mustache :index
     end
 
+    # get project page
+    get '/projects/:project/?' do
+      p = Ramrod::Data::Project.first(:project => params[:project].to_s)
+      if p
+        mustache :projectindex
+      else
+        404
+      end
+    end
 
 
 
