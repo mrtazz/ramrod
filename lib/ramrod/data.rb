@@ -1,16 +1,18 @@
 begin
   require 'dm-core'
+  require 'dm-migrations'
 rescue LoadError
   require 'rubygems'
-  require 'rake'
+  require 'dm-core'
+  require 'dm-migrations'
 end
 
 
 class Ramrod
   module Data
 
-    Datamapper.setup(:default, ENV['DATABASE_URL'] ||
-                     "sqlite3://#{Dir.pwd}/db/db.sqlite")
+    DataMapper.setup(:default, ENV['DATABASE_URL'] ||
+                      "sqlite3://#{Dir.pwd}/db/db.sqlite")
 
     class Project
       include DataMapper::Resource
@@ -38,6 +40,8 @@ class Ramrod
       belongs_to :project
 
     end
+
+    DataMapper.finalize
 
     DataMapper.auto_upgrade!
 

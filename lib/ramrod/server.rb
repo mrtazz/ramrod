@@ -9,10 +9,13 @@ rescue LoadError
   require 'sass'
 end
 
+require 'lib/ramrod/data'
+
 class Ramrod
 
   class Server < Sinatra::Base
     register Mustache::Sinatra
+    include Ramrod::Data
 
     base = File.dirname(__FILE__)
 
@@ -32,16 +35,6 @@ class Ramrod
       mustache :index
     end
 
-    # get project page
-    get '/projects/:project/?' do
-      p = Ramrod::Data::Project.first(:project => params[:project].to_s)
-      if p
-        mustache :projectindex
-      else
-        404
-      end
-    end
-
     # new project form
     get '/projects/new/?' do
       @actionurl = "/projects/create"
@@ -50,12 +43,22 @@ class Ramrod
 
     # create new project with given parameters
     post '/projects/create/?' do
-      p = Ramrod::Data::Project.new
+      p = Project.new
+    end
+
+    # get project page
+    get '/projects/:project/?' do
+      p = Project.first(:name => params[:project].to_s)
+      if p
+        mustache :projectindex
+      else
+        404
+      end
     end
 
     # edit project settings
     get '/projects/:project/edit' do
-      p = Ramrod::Data::Project.first(:project => params[:project].to_s)
+      p = Project.first(:name => params[:project].to_s)
       if p
         # TODO: mustache :projectindex
       else
@@ -66,7 +69,7 @@ class Ramrod
 
     # tell ramrod to build
     post '/projects/:project/build/?' do
-      p = Ramrod::Data::Project.first(:project => params[:project].to_s)
+      p = Project.first(:name => params[:project].to_s)
       if p
         # TODO: notify agents here
       else
@@ -76,7 +79,7 @@ class Ramrod
 
     # notification for build results
     put '/projects/:project/notify/?' do
-      p = Ramrod::Data::Project.first(:project => params[:project].to_s)
+      p = Project.first(:name => params[:project].to_s)
       if p
         # TODO: set build result for project
       else
