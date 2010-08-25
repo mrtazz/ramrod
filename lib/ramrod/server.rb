@@ -53,6 +53,15 @@ class Ramrod
       p = Ramrod::Data::Project.new
     end
 
+    # edit project settings
+    get '/projects/:project/edit' do
+      p = Ramrod::Data::Project.first(:project => params[:project].to_s)
+      if p
+        # TODO: mustache :projectindex
+      else
+        404
+      end
+    end
     # css
     get '/css/style.css' do
       content_type 'text/css', :charset => 'utf-8'
