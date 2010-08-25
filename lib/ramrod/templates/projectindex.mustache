@@ -1,0 +1,57 @@
+<div id="project">
+<form id="updateform" action="{{ actionurl }}" method="post">
+    <p>
+    <label for="projectname">Name: </label>
+    <input type="text"
+           id="projectname"
+           name="projectname"
+           value="{{projectname}}"><br>
+    <label for="description">Description: </label>
+    <input type="text"
+           id="description"
+           name="description"
+           value="{{description}}"><br>
+    <label for="token">Token: </label>
+    <input type="text"
+           id="token"
+           name="token"
+           value="{{token}}"><br>
+    <label for="projecturl">URL: </label>
+    <input type="text"
+           id="projecturl"
+           name="projecturl"
+           value="{{projecturl}}"><br>
+
+    {{ #boolagents }} Agents: {{ /boolagents}}
+
+    {{ #agents }}
+
+    <label for="agentname">Name: </label>
+    <input type="text"
+           id="agentname"
+           name="agentname"
+           value="{{agentname}}"><br>
+    <label for="description">Description: </label>
+    <input type="text"
+           id="description"
+           name="description"
+           value="{{description}}"><br>
+    <label for="callback">Token: </label>
+    <input type="text"
+           id="callback"
+           name="token"
+           value="{{callback}}"><br>
+    <label for="agenturl">URL: </label>
+    <input type="text"
+           id="agenturl"
+           name="agenturl"
+           value="{{agenturl}}"><br>
+
+    {{ /agents }}
+
+
+    <input type="submit" value="Send"> <input type="reset">
+    </p>
+ </form>
+
+</div>
