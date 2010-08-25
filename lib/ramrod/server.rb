@@ -42,6 +42,11 @@ class Ramrod
       end
     end
 
+    # new project form
+    get '/projects/new/?' do
+      @actionurl = "/projects/create"
+      mustache :projectindex
+    end
 
 
     # css
