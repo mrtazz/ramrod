@@ -21,6 +21,8 @@ class Ramrod
       property :token, String
       property :url, String
 
+      has n, :agents
+
     end
 
     class Agent
@@ -32,6 +34,8 @@ class Ramrod
       property :url, String
       property :callback, String
       property :success, Boolean
+
+      belongs_to :project
 
     end
 
