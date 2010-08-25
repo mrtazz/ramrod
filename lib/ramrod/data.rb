@@ -28,6 +28,8 @@ class Ramrod
 
       property :id, Serial
       property :name, String
+      property :description, String
+      property :url, String
       property :callback, String
       property :success, Boolean
 
