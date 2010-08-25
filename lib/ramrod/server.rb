@@ -62,6 +62,17 @@ class Ramrod
         404
       end
     end
+
+
+    # tell ramrod to build
+    post '/projects/:project/build/?' do
+      p = Ramrod::Data::Project.first(:project => params[:project].to_s)
+      if p
+        # TODO: notify agents here
+      else
+        404
+      end
+    end
     # css
     get '/css/style.css' do
       content_type 'text/css', :charset => 'utf-8'
