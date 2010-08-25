@@ -48,6 +48,10 @@ class Ramrod
       mustache :projectindex
     end
 
+    # create new project with given parameters
+    post '/projects/create/?' do
+      p = Ramrod::Data::Project.new
+    end
 
     # css
     get '/css/style.css' do
