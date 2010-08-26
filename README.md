@@ -28,14 +28,6 @@ Ramrod can be notified via a simple POST receive URL.
 ### Agent Notification
 A URL for every agent can be configured. Ramrod will then do a HTTP POST to
 this URL for every agent.
-The post contains the following JSON data for authorization and project
-details. This can be used for custom agents.
-
-    { :project => projectname, :token => token, :callback => callbackurl }
-
-`project` contains the project to build (for agents which are capable of
-building multiple projects). `token` is the authorization token for the given
-project. `callback` contains the URL to call when the build is done.
 
 ## Agents
 
@@ -49,11 +41,10 @@ following URL:
 
 The body of the notification should contain JSON in the following format:
 
-    { :project => project, :token => token, :success => true/false }
+    { :token => token, :success => true/false }
 
-:project here contains the name of the project which was build. :token contains
-the corresponding authorization token and :success defines whether the build
-was successful or not.
+:token contains the corresponding authorization token (if set) and :success defines
+whether the build was successful or not.
 
 
 ### [CIJoe][cijoe] as an agent
