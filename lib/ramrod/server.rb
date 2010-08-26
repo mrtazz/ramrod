@@ -43,14 +43,21 @@ class Ramrod
     end
 
     # create new project with given parameters
-    post '/projects/create/?' do
+    post '/projects/new/?' do
       p = Project.new
+      p.name = params[:projectname]
+      p.description = params[:description]
+      p.token = params[:token]
+      p.url = params[:projecturl]
+      p.save
     end
 
     # get project page
     get '/projects/:project/?' do
       p = Project.first(:name => params[:project].to_s)
       if p
+        @actionurl = "/projects/#{params[:project]}"
+        @project = p
         mustache :projectindex
       else
         404
@@ -58,10 +65,14 @@ class Ramrod
     end
 
     # edit project settings
-    get '/projects/:project/edit' do
+    post '/projects/:project/?' do
       p = Project.first(:name => params[:project].to_s)
       if p
-        # TODO: mustache :projectindex
+        p.update(:name => params[:projectname],
+                 :description => params[:description],
+                 :token => params[:token],
+                 :url => params[:projecturl])
+        redirect "/projects/#{params[:projectname]}"
       else
         404
       end
