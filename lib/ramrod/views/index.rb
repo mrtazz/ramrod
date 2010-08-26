@@ -10,6 +10,10 @@ class Ramrod
         "Command multiple CI instances for equal awesomeness."
       end
 
+      def projects
+        @projects
+      end
+
     end
   end
 end

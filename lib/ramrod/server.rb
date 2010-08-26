@@ -32,6 +32,7 @@ class Ramrod
 
     # index page
     get '/' do
+      @projects = Project.all
       mustache :index
     end
 
