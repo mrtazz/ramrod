@@ -100,3 +100,4 @@ easily deploy it to [Heroku][heroku].
 [cijoe]: http://github.com/defunkt/cijoe
 [notifo]: http://notifo.com
 [campfire]: http://campfirenow.com/
+[heroku]: http://heroku.com
