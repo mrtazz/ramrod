@@ -50,6 +50,7 @@ class Ramrod
       p.token = params[:token]
       p.url = params[:projecturl]
       p.save
+      redirect "/projects/#{params[:projectname]}"
     end
 
     # get project page
