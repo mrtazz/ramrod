@@ -14,19 +14,19 @@ class Ramrod
       end
 
       def projectname
-        @project.name
+        @project.nil? ? "" : @project.name
       end
 
       def description
-        @project.description
+        @project.nil? ? "" : @project.description
       end
 
       def projecturl
-        @project.url
+        @project.nil? ? "" : @project.url
       end
 
       def token
-        @project.token
+        @project.nil? ? "" : @project.token
       end
     end
   end
