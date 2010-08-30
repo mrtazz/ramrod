@@ -38,7 +38,6 @@ class Ramrod
 
     # new project form
     get '/projects/new/?' do
-      @actionurl = "/projects/create"
       mustache :projectindex
     end
 
