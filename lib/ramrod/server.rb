@@ -78,6 +78,25 @@ class Ramrod
       end
     end
 
+    # get form for new agent
+    get 'projects/:project/agents/new/?' do
+      p = Project.first(:name => params[:project].to_s)
+      if p
+        # TODO return form for creating new agent
+      else
+        404
+      end
+    end
+
+    # create new agent
+    post 'projects/:project/agents/new/?' do
+      p = Project.first(:name => params[:project].to_s)
+      if p
+        # TODO create agent for the designated project
+      else
+        404
+      end
+    end
 
     # tell ramrod to build
     post '/projects/:project/build/?' do
