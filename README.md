@@ -5,8 +5,7 @@ Ramrod is a central command center for multiple [Continuous Integration][ci]
 instances. It acts as a central management point for your code base. You can
 notify Ramrod from your SCM server and it tells its agents about it. The
 agents then fetch the code, build the software, run the tests and inform
-Ramrod about the result. Depending on the result, Ramrod then notifies
-the developers via various notifiers (e.g. email, irc, campfire, notifo).
+Ramrod about the result.
 
 ## Motivation
 My master's thesis project includes a software which has to run on Windows,
@@ -60,11 +59,11 @@ Integrity can also be used as an agent. It incorporates an HTTP notifier which
 can be used as a callback. However token based authorization does not work with
 integrity.
 
-## Notifications
-Ramrod can notify about build results via E-Mail, [Campfire][campfire], IRC,
-HTTP and [notifo][notifo]. You just have to mark the corresponding notifier in
-the project administration panel.
+## TODO
 
+* Notification system
+* Bundler support
+* Nicer design
 
 ## Installation
 Just clone the repository and run the executable:
@@ -85,8 +84,8 @@ Ramrod depends on the following gems and libraries:
 * notifo
 
 ## Deploy
-Ramrod has a simple structure, as it doesn't build anything itself. You can
-easily deploy it to [Heroku][heroku].
+Ramrod has a simple structure, as it doesn't build anything itself. You should
+be able to easily deploy it to a hosting provider like [Heroku][heroku].
 
 ## Thanks to and inspired by
 
@@ -98,6 +97,4 @@ easily deploy it to [Heroku][heroku].
 [ci]: http://en.wikipedia.org/wiki/Continuous_integration
 [integrity]: http://integrityapp.com/
 [cijoe]: http://github.com/defunkt/cijoe
-[notifo]: http://notifo.com
-[campfire]: http://campfirenow.com/
 [heroku]: http://heroku.com
