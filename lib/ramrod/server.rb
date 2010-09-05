@@ -2,11 +2,13 @@ begin
   require 'sinatra/base'
   require 'mustache/sinatra'
   require 'sass'
+  require 'json'
 rescue LoadError
   require 'rubygems'
   require 'sinatra/base'
   require 'mustache/sinatra'
   require 'sass'
+  require 'json'
 end
 
 require 'lib/ramrod/data'
