@@ -9,8 +9,8 @@ Ramrod about the result.
 
 ## Motivation
 My master's thesis project includes a software which has to run on Windows,
-Linux and the iPhone. I definitely wanted to have an easy-to-use build
-environemnt. However the build machines include Windows laptops, an old iMac
+Unix/Linux and the iPhone. I definitely wanted to have an easy-to-use build
+environment. However the build machines include Windows laptops, an old iMac
 and a FreeBSD server. Not all of these are suitable for a whole CI installation
 and I wanted to be able to easily add new machines.
 
