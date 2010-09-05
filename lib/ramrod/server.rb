@@ -60,6 +60,7 @@ class Ramrod
       if p
         @actionurl = "/projects/#{params[:project]}"
         @project = p
+        @agentlist = p.agents.all
         mustache :projectindex
       else
         404

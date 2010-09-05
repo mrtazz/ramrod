@@ -2,11 +2,13 @@ class Ramrod
   module Views
     class Projectindex < Layout
 
-      @agents = @agents || []
 
       def boolagents
-        #@agents.len? > 0
-        false
+        agents.count > 0
+      end
+
+      def agents
+        @agents = @agentlist.nil? ? [ ] : @agentlist
       end
 
       def actionurl

@@ -1,48 +1,58 @@
 <div id="project">
 <form id="updateform" action="{{ actionurl }}" method="post">
     <p>
-    <label for="projectname">Name: </label>
+    <label class="formlabel" for="projectname">Name: </label> <br>
     <input type="text"
+           class="forminput"
            id="projectname"
            name="projectname"
            value="{{projectname}}"><br>
-    <label for="description">Description: </label>
+    <label class="formlabel" for="description">Description: </label> <br>
     <input type="text"
+           class="forminput"
            id="description"
            name="description"
            value="{{description}}"><br>
-    <label for="token">Token: </label>
+    <label class="formlabel" for="token">Token: </label> <br>
     <input type="text"
+           class="forminput"
            id="token"
            name="token"
            value="{{token}}"><br>
-    <label for="projecturl">URL: </label>
+    <label class="formlabel" for="projecturl">URL: </label> <br>
     <input type="text"
+           class="forminput"
            id="projecturl"
            name="projecturl"
            value="{{projecturl}}"><br>
+
+    <div id="newagentlink">New Agent</div> <br>
 
     {{#boolagents}} Agents: {{/boolagents}}
 
     {{#agents}}
 
-    <label for="agentname">Name: </label>
+    <label class="formlabel agents" for="agentname">Name: </label> <br>
     <input type="text"
+           class="forminput"
            id="agentname"
            name="agentname"
            value="{{agentname}}"><br>
-    <label for="description">Description: </label>
+    <label class="formlabel agents" for="description">Description: </label> <br>
     <input type="text"
+           class="forminput"
            id="description"
            name="description"
            value="{{description}}"><br>
-    <label for="callback">Token: </label>
+    <label class="formlabel agents" for="callback">Token: </label> <br>
     <input type="text"
+           class="forminput"
            id="callback"
            name="token"
            value="{{callback}}"><br>
-    <label for="agenturl">URL: </label>
+    <label class="formlabel agents" for="agenturl">URL: </label> <br>
     <input type="text"
+           class="forminput"
            id="agenturl"
            name="agenturl"
            value="{{agenturl}}"><br>
@@ -50,8 +60,9 @@
     {{/agents}}
 
 
-    <input type="submit" value="Send"> <input type="reset">
+    <input type="submit" value="Save"> <input type="reset">
     </p>
  </form>
+    <div id="newagentdiv"> </div>
 
 </div>
