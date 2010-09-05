@@ -35,7 +35,7 @@ class Ramrod
       property :description, String
       property :url, String
       property :callback, String
-      property :success, Boolean
+      property :success, Boolean, :default => false
 
       belongs_to :project
 
