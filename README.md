@@ -64,6 +64,8 @@ integrity.
 * Notification system
 * Bundler support
 * Nicer design
+* Tests
+* Remove/Edit agents
 
 ## Installation
 Just clone the repository and run the executable:
