@@ -11,7 +11,7 @@ class Ramrod
       end
 
       def byline
-        "Command multiple CI instances for equal awesomeness."
+        "Command center for multiple CI instances and equal awesomeness."
       end
 
     end
