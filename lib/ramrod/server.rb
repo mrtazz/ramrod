@@ -81,6 +81,17 @@ class Ramrod
       end
     end
 
+    # get agents objects as json
+    get '/projects/:project/agents/?' do
+      p = Project.first(:name => params[:project].to_s)
+      if p
+        agents = p.agents
+        #json agents
+      else
+        404
+      end
+    end
+
     # get form for new agent
     get '/projects/:project/agents/new/?' do
       p = Project.first(:name => params[:project].to_s)
