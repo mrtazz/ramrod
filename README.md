@@ -85,12 +85,11 @@ Ramrod depends on the following gems and libraries:
 ## Contributing
 If you want to contribute to ramrod:
 
-1. Fork ramrod
-2. Create a topic branch
-3. Hack away
-4. Push to your branch
-5. Don't change version.rb
-6. Send a pull request
+* Fork the project.
+* Make your feature addition or bug fix.
+* Add tests for it. This is important so I don’t break it in a future version unintentionally.
+* Commit, do not mess with version
+* Send me a pull request. Bonus points for topic branches.
 
 
 ## Deploy
