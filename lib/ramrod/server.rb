@@ -107,6 +107,14 @@ class Ramrod
       p = Project.first(:name => params[:project].to_s)
       if p
         # TODO create agent for the designated project
+        a = Agent.create(
+          :project_id => p.id,
+          :name => params[:agentname],
+          :description => params[:description],
+          :url => params[:agenturl],
+          :callback => params[:callback]
+        )
+        redirect "/projects/#{p.name}"
       else
         404
       end
