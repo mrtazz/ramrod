@@ -81,9 +81,17 @@ Ramrod depends on the following gems and libraries:
 * JSON
 * dm-core
 * sinatra-ditties
-* shout-Bot
-* broach
-* notifo
+
+## Contributing
+If you want to contribute to ramrod:
+
+1. Fork ramrod
+2. Create a topic branch
+3. Hack away
+4. Push to your branch
+5. Don't change version.rb
+6. Send a pull request
+
 
 ## Deploy
 Ramrod has a simple structure, as it doesn't build anything itself. You should
