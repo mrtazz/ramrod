@@ -31,13 +31,13 @@
     {{#boolagents}} Agents: {{/boolagents}}
 
     {{#agents}}
-
+    <div class="agent" id="{{name}}">
     <label class="formlabel agents" for="agentname">Name: </label> <br>
     <input type="text"
            class="forminput"
            id="agentname"
            name="agentname"
-           value="{{agentname}}"><br>
+           value="{{name}}"><br>
     <label class="formlabel agents" for="description">Description: </label> <br>
     <input type="text"
            class="forminput"
@@ -55,8 +55,9 @@
            class="forminput"
            id="agenturl"
            name="agenturl"
-           value="{{agenturl}}"><br>
+           value="{{url}}"><br>
 
+    </div>
     {{/agents}}
 
 
