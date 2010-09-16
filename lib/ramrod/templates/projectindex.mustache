@@ -29,10 +29,11 @@
     <div id="newagentlink">New Agent</div> <br>
 
     {{#boolagents}} Agents: {{/boolagents}}
-
+    <div id="agents">
     {{#agents}}
-    <div class="agent" id="{{name}}">
-    <label class="formlabel agents" for="agentname">Name: </label> <br>
+    <div class="agent" id="{{name}}" project="{{projectname}}">
+    <label class="formlabel agents" for="agentname">Name: </label>
+    <div class="deleteagent" id="remove-agent-{{name}}">Delete</div><br>
     <input type="text"
            class="forminput"
            id="agentname"
@@ -59,6 +60,7 @@
 
     </div>
     {{/agents}}
+    </div>
 
 
     <input type="submit" value="Save"> <input type="reset">
