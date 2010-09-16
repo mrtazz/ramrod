@@ -120,6 +120,18 @@ class Ramrod
       end
     end
 
+    # delete agent
+    delete '/projects/:project/agents/:agentname/?' do
+      p = Project.first(:name => params[:project].to_s)
+      if p
+        a = p.agents.first(:name => params[:agentname].to_s)
+        a.destroy
+        200
+      else
+        404
+      end
+    end
+
     # tell ramrod to build
     post '/projects/:project/build/?' do
       p = Project.first(:name => params[:project].to_s)
