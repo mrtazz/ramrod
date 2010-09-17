@@ -25,47 +25,31 @@
            id="projecturl"
            name="projecturl"
            value="{{projecturl}}"><br>
+    <input type="submit" value="Save"> <input type="reset">
+    </p>
+ </form>
 
     <div id="newagentlink">New Agent</div> <br>
 
-    {{#boolagents}} Agents: {{/boolagents}}
     <div id="agents">
+    {{#boolagents}} Agents:
+    {{/boolagents}}
     {{#agents}}
     <div class="agent" id="{{name}}" project="{{projectname}}">
-    <label class="formlabel agents" for="agentname">Name: </label>
-    <div class="deleteagent" id="remove-agent-{{name}}">Delete</div><br>
-    <input type="text"
-           class="forminput"
-           id="agentname"
-           name="agentname"
-           value="{{name}}"><br>
-    <label class="formlabel agents" for="description">Description: </label> <br>
-    <input type="text"
-           class="forminput"
-           id="description"
-           name="description"
-           value="{{description}}"><br>
-    <label class="formlabel agents" for="callback">Token: </label> <br>
-    <input type="text"
-           class="forminput"
-           id="callback"
-           name="token"
-           value="{{callback}}"><br>
-    <label class="formlabel agents" for="agenturl">URL: </label> <br>
-    <input type="text"
-           class="forminput"
-           id="agenturl"
-           name="agenturl"
-           value="{{url}}"><br>
-
+    <hr class="agentsepline" />
+    <div class="deleteagent" id="remove-agent-{{name}}">
+      <img class="deleteimage" src="/images/delete.png"/>
+    </div>
+    <p class="formlabel"><span class="agentlabel">Name: </span>{{name}}</p>
+    <p class="formlabel"><span class="agentlabel">Description: </span>{{description}}</p>
+    <p class="formlabel"><span class="agentlabel">Callback: </span>{{callback}}</p>
+    <p class="formlabel"><span class="agentlabel">Url: </span>{{url}}</p>
+    <hr class="agentsepline" />
     </div>
     {{/agents}}
     </div>
 
 
-    <input type="submit" value="Save"> <input type="reset">
-    </p>
- </form>
     <div id="newagentdiv"> </div>
 
 </div>
