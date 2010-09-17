@@ -50,7 +50,7 @@ whether the build was successful or not.
 The simple and powerful cijoe can be easily used as an agent. You can tell him
 to build via POST to the base URL. For callback notification, you have to
 implement the hooks `.git/hooks/build-failed` and `.git/hooks/build-worked` to
-contain a shell script which does a `curl -X POST http://Ramrod.domain` with
+contain a shell script which does a `curl -X PUT http://Ramrod.domain` with
 the corresponding JSON payload.
 
 
