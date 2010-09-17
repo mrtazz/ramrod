@@ -144,7 +144,7 @@ class Ramrod
           begin
             net.start {|http| http.request(req)}
           rescue
-            a.status = "Unable to connect."
+            a.update(:status => "Unable to connect.")
           end
         end
         200
