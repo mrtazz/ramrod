@@ -30,6 +30,35 @@
  </form>
 
     <div id="newagentlink">New Agent</div> <br>
+    <div id="newagentdiv">
+      <form action="/projects/{{projectname}}/agents/new" method="post">
+      <label class="formlabel agents" for="agentname">Name: </label><br>
+      <input type="text"
+            class="forminput"
+            id="agentname"
+            name="agentname"
+            value=""><br>
+      <label class="formlabel agents" for="description">Description: </label><br>
+      <input type="text"
+            class="forminput"
+            id="description"
+            name="description"
+            value=""><br>
+      <label class="formlabel agents" for="callback">Callback: </label><br>
+      <input type="text"
+            class="forminput"
+            id="callback"
+            name="callback"
+            value=""><br>
+      <label class="formlabel agents" for="agenturl">URL: </label><br>
+      <input type="text"
+            class="forminput"
+            id="agenturl"
+            name="agenturl"
+            value=""><br>
+      <input type="submit" value="Save"></form>
+
+    </div>
 
     <div id="agents">
     {{#boolagents}} Agents:
@@ -49,8 +78,4 @@
     </div>
     {{/agents}}
     </div>
-
-
-    <div id="newagentdiv"> </div>
-
 </div>
