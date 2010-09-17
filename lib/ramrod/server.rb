@@ -8,6 +8,8 @@ require 'sinatra/base'
 require 'mustache/sinatra'
 require 'sass'
 require 'json'
+require 'net/http'
+require 'uri'
 
 require 'lib/ramrod/data'
 
@@ -134,7 +136,18 @@ class Ramrod
     post '/projects/:project/build/?' do
       p = Project.first(:name => params[:project].to_s)
       if p
-        # TODO: notify agents here
+        p.agents.each do |a|
+          url = URI.parse(a.url)
+          path = url.path.length > 0 ? url.path : "/"
+          req = Net::HTTP::Post.new(path)
+          net = Net::HTTP.new(url.host, 80)
+          begin
+            net.start {|http| http.request(req)}
+          rescue
+            a.status = "Unable to connect."
+          end
+        end
+        200
       else
         404
       end
