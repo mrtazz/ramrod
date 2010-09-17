@@ -1,15 +1,13 @@
 begin
-  require 'sinatra/base'
-  require 'mustache/sinatra'
-  require 'sass'
-  require 'json'
+require "bundler/setup"
 rescue LoadError
   require 'rubygems'
-  require 'sinatra/base'
-  require 'mustache/sinatra'
-  require 'sass'
-  require 'json'
+  require "bundler/setup"
 end
+require 'sinatra/base'
+require 'mustache/sinatra'
+require 'sass'
+require 'json'
 
 require 'lib/ramrod/data'
 

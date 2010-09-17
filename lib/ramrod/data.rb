@@ -1,11 +1,5 @@
-begin
-  require 'dm-core'
-  require 'dm-migrations'
-rescue LoadError
-  require 'rubygems'
-  require 'dm-core'
-  require 'dm-migrations'
-end
+require 'dm-core'
+require 'dm-migrations'
 
 
 class Ramrod

@@ -62,10 +62,10 @@ integrity.
 ## TODO
 
 * Notification system
-* Bundler support
 * Nicer design
 * Tests
 * Remove/Edit agents
+* Authentication
 
 ## Installation
 Just clone the repository and run the executable:
@@ -74,13 +74,7 @@ Just clone the repository and run the executable:
     ./bin/ramrod
 
 ### Dependencies
-Ramrod depends on the following gems and libraries:
-
-* sinatra
-* mustache
-* JSON
-* dm-core
-* sinatra-ditties
+For dependencies see `Gemfile`.
 
 ## Contributing
 If you want to contribute to ramrod:
