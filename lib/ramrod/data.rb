@@ -24,8 +24,8 @@ class Ramrod
     class Agent
       include DataMapper::Resource
 
-      property :id, Serial
-      property :name, String
+      property :id, Serial, :key => true
+      property :name, String, :key => true
       property :description, String
       property :url, String
       property :callback, String
