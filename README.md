@@ -74,6 +74,7 @@ integrity.
 Just clone the repository and run the executable:
 
     git clone http://github.com/mrtazz/ramrod.git
+    bundle install
     ./bin/ramrod
 
 ### Dependencies
