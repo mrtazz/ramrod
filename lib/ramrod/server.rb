@@ -164,7 +164,7 @@ class Ramrod
           p.agents.each do |a|
             if a.name == name
               a.update(:success => success)
-              status = success ? "Build succeeded." : "Build failed."
+              status = (success == "true" ? "Build succeeded." : "Build failed.")
               a.update(:status => status)
             end
           end
