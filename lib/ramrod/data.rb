@@ -28,7 +28,6 @@ class Ramrod
       property :name, String, :key => true
       property :description, String
       property :url, String
-      property :callback, String
       property :success, Boolean, :default => false
       property :status, String
 

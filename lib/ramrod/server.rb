@@ -111,8 +111,7 @@ class Ramrod
           :project_id => p.id,
           :name => params[:agentname],
           :description => params[:description],
-          :url => params[:agenturl],
-          :callback => params[:callback]
+          :url => params[:agenturl]
         )
         redirect "/projects/#{p.name}"
       else
