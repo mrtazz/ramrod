@@ -156,8 +156,22 @@ class Ramrod
     # notification for build results
     put '/projects/:project/notify/?' do
       p = Project.first(:name => params[:project].to_s)
-      if p
-        # TODO: set build result for project
+      token = params["token"]
+      success = params["success"]
+      name = params["name"]
+      if p # if project exists
+        if p.token == token # if correct token was supplied
+          p.agents.each do |a|
+            if a.name == name
+              a.update(:success => success)
+              status = success ? "Build succeeded." : "Build failed."
+              a.update(:status => status)
+            end
+          end
+          200
+        else
+          403
+        end
       else
         404
       end
