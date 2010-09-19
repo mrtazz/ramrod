@@ -139,8 +139,9 @@ class Ramrod
         p.agents.each do |a|
           url = URI.parse(a.url)
           path = url.path.length > 0 ? url.path : "/"
+          port = url.port ||= 80
           req = Net::HTTP::Post.new(path)
-          net = Net::HTTP.new(url.host, 80)
+          net = Net::HTTP.new(url.host, port)
           begin
             net.start {|http| http.request(req)}
           rescue
