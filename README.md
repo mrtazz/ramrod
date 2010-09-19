@@ -98,10 +98,11 @@ be able to easily deploy it to a hosting provider like [Heroku][heroku].
 
 * [integrity][integrity]
 * [cijoe][cijoe]
-
+* [hudson][hudson]
 
 
 [ci]: http://en.wikipedia.org/wiki/Continuous_integration
 [integrity]: http://integrityapp.com/
 [cijoe]: http://github.com/defunkt/cijoe
 [heroku]: http://heroku.com
+[hudson]: http://hudson-ci.org
