@@ -38,20 +38,23 @@ following URL:
 
     PUT http://ramrod.domain/:project/notify
 
-The body of the notification should contain JSON in the following format:
+The body of the notification should contain the following data:
 
-    { :token => token, :success => true/false }
+    token = token
+    success = true/false
+    name = name of the updating agent
 
-:token contains the corresponding authorization token (if set) and :success defines
-whether the build was successful or not.
+`token` contains the corresponding authorization token and `success` defines
+whether the build was successful or not. `name` contains the name of the
+updating agent.
 
 
 ### [CIJoe][cijoe] as an agent
 The simple and powerful cijoe can be easily used as an agent. You can tell him
 to build via POST to the base URL. For callback notification, you have to
 implement the hooks `.git/hooks/build-failed` and `.git/hooks/build-worked` to
-contain a shell script which does a `curl -X PUT http://Ramrod.domain` with
-the corresponding JSON payload.
+contain a shell script which does a
+`curl -X PUT -d"token=bla&success=true&name=foo" http://ramrod.domain`.
 
 
 ### [Integrity][integrity] as an agent
@@ -64,7 +67,7 @@ integrity.
 * Notification system
 * Nicer design
 * Tests
-* Remove/Edit agents
+* Edit agents
 * Authentication
 
 ## Installation
